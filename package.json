@@ -11,6 +11,10 @@
     "test:watch": "jest --watch",
     "prepare": "husky install"
   },
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.22.10"
+  },
   "prisma": {
     "schema": "db/schema.prisma"
   },
