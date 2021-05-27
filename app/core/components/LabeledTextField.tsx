@@ -1,7 +1,8 @@
 import { forwardRef, PropsWithoutRef } from "react"
 import { useFormContext } from "react-hook-form"
+import { FormControl, FormErrorMessage, FormLabel, Input, InputProps } from "@chakra-ui/react"
 
-export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["input"]> {
+export interface LabeledTextFieldProps extends PropsWithoutRef<InputProps> {
   /** Field name. */
   name: string
   /** Field label. */
@@ -11,7 +12,7 @@ export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElem
   outerProps?: PropsWithoutRef<JSX.IntrinsicElements["div"]>
 }
 
-export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldProps>(
+export const LabeledTextField = forwardRef<InputProps, LabeledTextFieldProps>(
   ({ label, outerProps, name, ...props }, ref) => {
     const {
       register,
@@ -22,35 +23,14 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
       : errors[name]?.message || errors[name]
 
     return (
-      <div {...outerProps}>
-        <label>
+      <FormControl isInvalid={error} {...outerProps}>
+        <FormLabel>
           {label}
-          <input disabled={isSubmitting} {...register(name)} {...props} />
-        </label>
+          <Input isDisabled={isSubmitting} {...register(name)} {...props} />
+        </FormLabel>
 
-        {error && (
-          <div role="alert" style={{ color: "red" }}>
-            {error}
-          </div>
-        )}
-
-        <style jsx>{`
-          label {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            font-size: 1rem;
-          }
-          input {
-            font-size: 1rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            border: 1px solid purple;
-            appearance: none;
-            margin-top: 0.5rem;
-          }
-        `}</style>
-      </div>
+        {error && <FormErrorMessage>{error}</FormErrorMessage>}
+      </FormControl>
     )
   }
 )
