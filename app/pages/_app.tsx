@@ -12,13 +12,14 @@ import LoginForm from "app/auth/components/LoginForm"
 import { Suspense } from "react"
 
 import { ChakraProvider } from "@chakra-ui/react"
+import theme from "../theme"
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
   const router = useRouter()
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Suspense fallback="Loading...">
         <ErrorBoundary
           FallbackComponent={RootErrorFallback}
