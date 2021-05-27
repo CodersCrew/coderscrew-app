@@ -4,8 +4,6 @@
 
 This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
 
-# **CodersCrewApp**
-
 ## Getting Started
 
 Run your app in the development mode.

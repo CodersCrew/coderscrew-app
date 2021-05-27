@@ -55,7 +55,6 @@ export function Form<S extends z.ZodType<any, any>>({
         className="form"
         {...props}
       >
-        {/* Form fields supplied as children are rendered here */}
         {children}
 
         {formError && (

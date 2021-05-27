@@ -1,5 +1,5 @@
 {
-  "name": "CodersCrewApp",
+  "name": "coderscrew-app",
   "version": "1.0.0",
   "scripts": {
     "dev": "blitz dev",
