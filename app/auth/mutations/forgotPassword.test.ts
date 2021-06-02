@@ -1,6 +1,6 @@
 import { hash256, Ctx } from "blitz"
 import forgotPassword from "./forgotPassword"
-import db, { Token } from "db"
+import db from "db"
 import previewEmail from "preview-email"
 
 beforeEach(async () => {
@@ -41,11 +41,14 @@ describe("forgotPassword mutation", () => {
     await forgotPassword({ email: user.email }, {} as Ctx)
 
     const tokens = await db.token.findMany({ where: { userId: user.id } })
-    const token = tokens[0]!
+    const token = tokens[0]
+    if (!user.tokens[0]) throw new Error("Missing user token")
+    if (!token) throw new Error("Missing token")
 
+    // delete's existing tokens
     expect(tokens.length).toBe(1)
 
-    expect(token.id).not.toBe(user.tokens[0]!.id)
+    expect(token.id).not.toBe(user.tokens[0].id)
     expect(token.type).toBe("RESET_PASSWORD")
     expect(token.sentTo).toBe(user.email)
     expect(token.hashedToken).toBe(hash256(generatedToken))
