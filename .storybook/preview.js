@@ -2,10 +2,13 @@ import React from "react"
 import { addDecorator } from "@storybook/react"
 import { ThemeProvider, theme, CSSReset } from "@chakra-ui/core"
 
+import { ChakraProvider } from "@chakra-ui/react"
+import themeCh from "../app/theme"
+
 addDecorator((story) => (
   <ThemeProvider theme={theme}>
     <CSSReset />
-    {story()}
+    <ChakraProvider theme={themeCh}>{story()}</ChakraProvider>
   </ThemeProvider>
 ))
 

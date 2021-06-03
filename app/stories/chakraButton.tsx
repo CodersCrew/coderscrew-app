@@ -1,7 +1,5 @@
 import React from "react"
 import { Button } from "@chakra-ui/react"
-import { ChakraProvider } from "@chakra-ui/react"
-import theme from "../theme"
 
 export interface BtnProps {
   size?: "xs" | "sm" | "md" | "lg"
@@ -13,25 +11,23 @@ export interface BtnProps {
 }
 
 const chakraButton: React.FC<BtnProps> = ({
-  size,
+  size = "lg",
   color = "blue",
-  variant,
+  variant = "solid",
   isLoading = false,
   loadingText = "Loading",
   text = "Button",
 }) => {
   return (
-    <ChakraProvider theme={theme}>
-      <Button
-        size={size}
-        colorScheme={color}
-        variant={variant}
-        isLoading={isLoading}
-        loadingText={loadingText}
-      >
-        {text}
-      </Button>
-    </ChakraProvider>
+    <Button
+      size={size}
+      colorScheme={color}
+      variant={variant}
+      isLoading={isLoading}
+      loadingText={loadingText}
+    >
+      {text}
+    </Button>
   )
 }
 
