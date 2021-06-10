@@ -3,7 +3,7 @@ import { sessionMiddleware, simpleRolesIsAuthorized } from "blitz"
 module.exports = {
   middleware: [
     sessionMiddleware({
-      cookiePrefix: 'CodersCrewApp',
+      cookiePrefix: "CodersCrewApp",
       isAuthorized: simpleRolesIsAuthorized,
     }),
   ],

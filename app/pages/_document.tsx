@@ -1,4 +1,4 @@
-import { Document, Html, DocumentHead, Main, BlitzScript /*DocumentContext*/ } from "blitz"
+import { Document, Html, DocumentHead, Main, BlitzScript /* DocumentContext*/ } from "blitz"
 import { ColorModeScript } from "@chakra-ui/react"
 import theme from "../theme"
 

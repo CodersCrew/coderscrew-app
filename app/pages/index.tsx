@@ -17,6 +17,7 @@ const UserInfo = () => {
     return (
       <>
         <button
+          type="button"
           className="button small"
           onClick={async () => {
             await logoutMutation()
@@ -31,22 +32,21 @@ const UserInfo = () => {
         </div>
       </>
     )
-  } else {
-    return (
-      <>
-        <Link href={Routes.SignupPage()}>
-          <a className="button small">
-            <strong>Sign Up</strong>
-          </a>
-        </Link>
-        <Link href={Routes.LoginPage()}>
-          <a className="button small">
-            <strong>Login</strong>
-          </a>
-        </Link>
-      </>
-    )
   }
+  return (
+    <>
+      <Link href={Routes.SignupPage()}>
+        <a href="/" className="button small">
+          <strong>Sign Up</strong>
+        </a>
+      </Link>
+      <Link href={Routes.LoginPage()}>
+        <a href="/" className="button small">
+          <strong>Login</strong>
+        </a>
+      </Link>
+    </>
+  )
 }
 
 const Home: BlitzPage = () => {
@@ -87,7 +87,7 @@ const Home: BlitzPage = () => {
           <p>
             and go to{" "}
             <Link href="/projects">
-              <a>/projects</a>
+              <a href="/">/projects</a>
             </Link>
           </p>
         </div>

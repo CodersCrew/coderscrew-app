@@ -33,10 +33,9 @@ const ResetPasswordPage: BlitzPage = () => {
                 return {
                   [FORM_ERROR]: error.message,
                 }
-              } else {
-                return {
-                  [FORM_ERROR]: "Sorry, we had an unexpected error. Please try again.",
-                }
+              }
+              return {
+                [FORM_ERROR]: "Sorry, we had an unexpected error. Please try again.",
               }
             }
           }}

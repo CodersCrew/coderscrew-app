@@ -37,5 +37,4 @@ export default resolver.pipe(resolver.zod(ForgotPassword), async ({ email }) => 
   }
 
   // 8. Return the same result whether a password reset email was sent or not
-  return
 })
