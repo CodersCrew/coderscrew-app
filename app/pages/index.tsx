@@ -44,6 +44,11 @@ const UserInfo = () => {
             <strong>Login</strong>
           </a>
         </Link>
+        <Link href="/api/auth/google">
+          <a className="button small">
+            <strong>Sign In with Google</strong>
+          </a>
+        </Link>
       </>
     )
   }
