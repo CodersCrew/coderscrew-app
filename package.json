@@ -11,7 +11,8 @@
     "test:watch": "jest --watch",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "start:production": "blitz start --port $PORT"
   },
   "engines": {
     "npm": "please-use-yarn",
