@@ -23,6 +23,7 @@ model User {
 
   tokens   Token[]
   sessions Session[]
+  icon     String
 }
 
 model Session {
