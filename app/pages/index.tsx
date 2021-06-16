@@ -36,12 +36,12 @@ const UserInfo = () => {
   return (
     <>
       <Link href={Routes.SignupPage()}>
-        <a href="/" className="button small">
+        <a className="button small">
           <strong>Sign Up</strong>
         </a>
       </Link>
       <Link href={Routes.LoginPage()}>
-        <a href="/" className="button small">
+        <a className="button small">
           <strong>Login</strong>
         </a>
       </Link>
@@ -87,7 +87,7 @@ const Home: BlitzPage = () => {
           <p>
             and go to{" "}
             <Link href="/projects">
-              <a href="/">/projects</a>
+              <a>/projects</a>
             </Link>
           </p>
         </div>
