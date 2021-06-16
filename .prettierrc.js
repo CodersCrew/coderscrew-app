@@ -11,5 +11,5 @@ module.exports = {
   jsxBracketSameLine: false,
   arrowParens: "always",
   parser: "typescript",
-  endOfLine: "crlf",
+  endOfLine: "lf",
 }

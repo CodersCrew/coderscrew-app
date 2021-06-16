@@ -24,6 +24,7 @@ module.exports = {
     "import",
   ],
   extends: [
+    "blitz",
     "eslint:recommended",
     "airbnb-typescript",
     "plugin:@typescript-eslint/recommended",
@@ -34,10 +35,13 @@ module.exports = {
     "plugin:import/warnings",
   ],
   rules: {
+    "import/no-anonymous-default-export": "error",
+    "import/no-webpack-loader-syntax": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     complexity: [2, 11],
-    "sort-imports": 0,
     "spaced-comment": [2, "always", { markers: ["/"] }],
-    "class-methods-use-this": 0,
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "@typescript-eslint/no-unused-vars": [2, { argsIgnorePattern: "^_" }],
     "@typescript-eslint/array-type": 2,
