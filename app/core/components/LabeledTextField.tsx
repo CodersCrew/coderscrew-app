@@ -13,7 +13,7 @@ export interface LabeledTextFieldProps extends PropsWithoutRef<InputProps> {
 }
 
 export const LabeledTextField = forwardRef<InputProps, LabeledTextFieldProps>(
-  ({ label, outerProps, name, ...props }, ref) => {
+  ({ label, outerProps, name, ...props }) => {
     const {
       register,
       formState: { isSubmitting, errors },
