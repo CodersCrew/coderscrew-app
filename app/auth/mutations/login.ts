@@ -2,6 +2,7 @@ import { resolver, SecurePassword, AuthenticationError } from "blitz"
 import db from "db"
 import { Login } from "../validations"
 import { Role } from "types"
+import { omit } from "lodash"
 
 export const authenticateUser = async (rawEmail: string, rawPassword: string) => {
   const email = rawEmail.toLowerCase().trim()
@@ -17,7 +18,8 @@ export const authenticateUser = async (rawEmail: string, rawPassword: string) =>
     await db.user.update({ where: { id: user.id }, data: { hashedPassword: improvedHash } })
   }
 
-  const { ...rest } = user
+  const rest = omit(user, ["hashedPassword"])
+
   return rest
 }
 
